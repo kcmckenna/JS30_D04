@@ -89,14 +89,53 @@
 
     // 5. Sort the inventors by years lived
 
-    const oldest 
+    // const oldest = inventors.sort(function(a,b) {
+    //   const lastGuy = a.passsed - a.year;
+    //   const nextGuy = b.passed - b.year;
+    //   if(lastGuy > nextGuy) {
+    //     return -1;
+    //   } else {
+    //     return 1;
+    //   }
+    // });
+
+    // OR it can be written this way...
+
+    const oldest = inventors.sort(function(a,b) {
+      const lastGuy = a.passsed - a.year;
+      const nextGuy = b.passed - b.year;
+      return lastGuy > nextGuy ? -1 : 1;
+    });
+
+    console.table(oldest);
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+    // const category = document.querySelector('.mw-category');
+    // const links = category.querySelectorAll('a');
+
+    // these two can be combined using a space to separate, but you can call on query selector from a previous one
+    // also, the links are a nodelist and using map can't be used unless it's converted into an array.
+   
+    // const links = [...category.querySelectorAll('a')];
+    // spread will take every item out of something and put it into an array
+
+        // const category = document.querySelector('.mw-category');
+        // const links = Array.from(category.querySelectorAll('a'));
+        // const de = links
+        //           .map(link => link.textContent)
+        //           .filter(streetName => streetName.includes('de'));
+
+        // to use this, open dev tools and copy/paste code in console of wiki page.
+
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+
+    const alpha = people.sort(function(lastOne, nextOne) {
+      console.log(lastOne);
+    });
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
